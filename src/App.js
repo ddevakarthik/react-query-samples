@@ -5,6 +5,7 @@ import QueryBasic from "./containers/QueryBasic";
 import Query from "./containers/Query";
 import QueryKeys from "./containers/QueryKeys";
 import NetworkMode from "./containers/NetworkMode";
+import ParallelQueries from "./containers/ParallelQueries";
 
 const App = () => {
   return (
@@ -41,6 +42,12 @@ const App = () => {
                   Network Mode
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/parallelqueries" className="nav-link">
+                  {" "}
+                  Parallel Queries
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -51,6 +58,7 @@ const App = () => {
         <Route path="/query" element={<Query />} />
         <Route path="/querykey" element={<QueryKeys />} />
         <Route path="/networkmode" element={<NetworkMode />} />
+        <Route path="/parallelqueries" element={<ParallelQueries />} />
       </Routes>
     </>
   );
