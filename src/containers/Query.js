@@ -1,14 +1,14 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import axios from "axios";
 
-export default function QueryBasic() {
-  return <BasicReactQuery />;
+export default function Query() {
+  return <ReactQuery />;
 }
 
-function BasicReactQuery() {
-  const { isLoading, error, data, isFetching } = useQuery(
+function ReactQuery() {
+  const { isLoading, error, data, isFetching, fetchStatus } = useQuery(
     ["todoData"],
     () => axios.get("http://localhost:8080/todos").then((res) => res.data),
     { staleTime: 12000 }
@@ -28,6 +28,7 @@ function BasicReactQuery() {
         );
       })}
       <div>{isFetching ? "Updating..." : ""}</div>
+      <div> FetchStatus : {fetchStatus}</div>
     </div>
   );
 }

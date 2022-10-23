@@ -2,16 +2,8 @@ import React from "react";
 import { Route, Routes, NavLink } from "react-router-dom";
 
 import QueryBasic from "./containers/QueryBasic";
-import QueryKeys from "./containers/QueryKeys";
+import Query from "./containers/Query";
 const App = () => {
-  // let routes = (
-  //   <Routes>
-  //     <Route path="/" exact component={QueryBasic} />
-  //     <Route path="/querykeys" component={QueryKeys} />
-  //     {/* <Route path="*" component={NotFoundPage} /> */}
-  //   </Routes>
-  // );
-
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,13 +17,13 @@ const App = () => {
               <li className="nav-item">
                 <NavLink to="/" exact className="nav-link">
                   {" "}
-                  Query Basic
+                  React query
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/querykeys" className="nav-link">
+                <NavLink to="/query" className="nav-link">
                   {" "}
-                  Query Keys
+                  Query
                 </NavLink>
               </li>
             </ul>
@@ -41,7 +33,7 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<QueryBasic />}></Route>
-        <Route path="/querykeys" element={<QueryKeys />} />
+        <Route path="/query" element={<Query />} />
       </Routes>
     </>
   );
