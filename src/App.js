@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes, NavLink } from "react-router-dom";
+import { useIsFetching } from "@tanstack/react-query";
 
 import QueryBasic from "./containers/QueryBasic";
 import Query from "./containers/Query";
@@ -59,7 +60,9 @@ const App = () => {
           </div>
         </div>
       </nav>
-
+      <div style={{ backgroundColor: "yellow" }}>
+        <GlobalFetchingIndicator />
+      </div>
       <Routes>
         <Route path="/" element={<QueryBasic />}></Route>
         <Route path="/query" element={<Query />} />
@@ -73,3 +76,8 @@ const App = () => {
 };
 
 export default App;
+
+function GlobalFetchingIndicator() {
+  const isFetching = useIsFetching();
+  return isFetching ? <div>Fetching in progress...</div> : null;
+}
