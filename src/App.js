@@ -4,6 +4,7 @@ import { Route, Routes, NavLink } from "react-router-dom";
 import QueryBasic from "./containers/QueryBasic";
 import Query from "./containers/Query";
 import QueryKeys from "./containers/QueryKeys";
+import NetworkMode from "./containers/NetworkMode";
 
 const App = () => {
   return (
@@ -34,6 +35,12 @@ const App = () => {
                   Query Keys
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/networkmode" className="nav-link">
+                  {" "}
+                  Network Mode
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -43,6 +50,7 @@ const App = () => {
         <Route path="/" element={<QueryBasic />}></Route>
         <Route path="/query" element={<Query />} />
         <Route path="/querykey" element={<QueryKeys />} />
+        <Route path="/networkmode" element={<NetworkMode />} />
       </Routes>
     </>
   );
