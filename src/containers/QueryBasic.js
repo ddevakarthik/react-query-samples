@@ -20,13 +20,11 @@ function BasicReactQuery() {
 
   return (
     <div>
-      {data.map((todo, i) => {
-        return (
-          <tr key={i}>
-            <td>{todo.name}</td>
-          </tr>
-        );
-      })}
+      <ul>
+        {data.map((todo, i) => {
+          return <li key={i}>{todo.name}</li>;
+        })}
+      </ul>
       <div>{isFetching ? "Updating..." : ""}</div>
     </div>
   );
