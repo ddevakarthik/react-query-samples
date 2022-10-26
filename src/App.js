@@ -10,6 +10,7 @@ import ParallelQueries from "./containers/ParallelQueries";
 import DependentQueries from "./containers/DependentQueries";
 import RefetchQueries from "./containers/RefetchQueries";
 import QueryRetries from "./containers/QueryRetries";
+import QueryCancellation from "./containers/QueryCancellation";
 
 const App = () => {
   return (
@@ -70,6 +71,12 @@ const App = () => {
                   Retry Queries
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/querycancellation" className="nav-link">
+                  {" "}
+                  Query Cancellation
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -86,6 +93,7 @@ const App = () => {
         <Route path="/dependentqueries" element={<DependentQueries />} />
         <Route path="/refetchqueries" element={<RefetchQueries />} />
         <Route path="/retryqueries" element={<QueryRetries />} />
+        <Route path="/querycancellation" element={<QueryCancellation />} />
       </Routes>
     </>
   );
