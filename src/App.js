@@ -8,7 +8,8 @@ import QueryKeys from "./containers/QueryKeys";
 import NetworkMode from "./containers/NetworkMode";
 import ParallelQueries from "./containers/ParallelQueries";
 import DependentQueries from "./containers/DependentQueries";
-import RefetchQueries from "./RefetchQueries";
+import RefetchQueries from "./containers/RefetchQueries";
+import QueryRetries from "./containers/QueryRetries";
 
 const App = () => {
   return (
@@ -63,6 +64,12 @@ const App = () => {
                   Refetch Queries
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/retryqueries" className="nav-link">
+                  {" "}
+                  Retry Queries
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
@@ -78,6 +85,7 @@ const App = () => {
         <Route path="/parallelqueries" element={<ParallelQueries />} />
         <Route path="/dependentqueries" element={<DependentQueries />} />
         <Route path="/refetchqueries" element={<RefetchQueries />} />
+        <Route path="/retryqueries" element={<QueryRetries />} />
       </Routes>
     </>
   );

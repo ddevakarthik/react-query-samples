@@ -10,6 +10,8 @@ const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
+      // refetchInterval: 10000,
+      // retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000), // Default starting at 1000 ms and not exceeding 30 secs
     },
   },
 });
